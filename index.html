@@ -5,86 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satriale</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Navigation -->
-    <header class="top-nav">
-        <div class="logo">Satriale</div>
-        <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchContent()">
-        <div class="nav-icons">
-            <a href="https://discord.gg/gB6Cjx2wF6" target="_blank">
-                <img src="discord-icon.png" alt="Discord" class="icon">
+
+    <!-- Left Navbar -->
+    <nav>
+        <h1>Satriale</h1>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('constitution')">La Constituzione</a>
+        <div class="discord-icon">
+            <a href="https://discord.com" target="_blank">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/discord-3-569463.png" alt="Discord">
             </a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
+    <!-- Main content -->
     <main>
-        <!-- Landing Section -->
-        <section class="landing">
-            <div class="landing-text">
-                <h1>Welcome to the Serene Republic of Satriale</h1>
-                <p>A Minecraft nation with a rich history and a structured government.</p>
-                <div class="buttons">
-                    <a href="#constitution" class="btn-primary">La Constituzione</a>
-                    <a href="#constitution" class="btn-secondary">Learn More</a>
-                </div>
-            </div>
-            <div class="landing-image">
-                <img src="53187472-30e0-4d28-8ad1-e72f8f708c37.png" alt="Satriale Banner">
-            </div>
-        </section>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
 
-        <!-- Constitution Section -->
-        <section id="constitution">
+        <!-- Home Section -->
+        <div id="home" class="section active">
+            <img class="banner" src="1f44861cdd3d42c6de3d3e9ba1394d1c.jpeg" alt="Satriale Banner">
+            <h2>Welcome to Satriale</h2>
+            <p>This is your landing page. Add your intro or welcome text here.</p>
+        </div>
+
+        <!-- La Constituzione Section -->
+        <div id="constitution" class="section">
             <h2>La Constituzione</h2>
-
-            <article id="state">
-                <h3>Article I - The State</h3>
-                <p>The State shall be known as The Serene Republic of Satriale...</p>
-            </article>
-
-            <article id="dons">
-                <h3>Article II - The Dons</h3>
-                <p>Each recognized Don shall govern a Hold consisting of their developed and administered lands...</p>
-            </article>
-
-            <article id="doge">
-                <h3>Article III - The Doge</h3>
-                <p>The Doge shall serve as Head of State and ultimate authority in matters of diplomacy, state governance, and national security...</p>
-            </article>
-
-            <article id="citizenship">
-                <h3>Article IV - The Citizenry</h3>
-                <p>Citizenship of a player shall be granted by a simple majority of the Council...</p>
-            </article>
-
-            <article id="sindacos">
-                <h3>Article V - Sindacos</h3>
-                <p>Cities/Townships/etc may carry out free elections for a Sindaco – or Mayor...</p>
-            </article>
-
-            <article id="territory">
-                <h3>Article VI - State Territory</h3>
-                <p>All lands not currently administered as Holds shall be considered State Territory...</p>
-            </article>
-
-            <article id="law">
-                <h3>Article VII - Law & Order</h3>
-                <p>State law shall apply to all citizens within the Republic...</p>
-            </article>
-
-            <article id="amendments">
-                <h3>Article VIII - Amendments</h3>
-                <p>Amendments to this Constitution may be proposed by the Doge or by any Don...</p>
-            </article>
-
-            <article id="ratification">
-                <h3>Ratification</h3>
-                <p>The historically recognized Dons of the Serene Republic of Satriale are those formerly known as Dukes...</p>
-            </article>
-        </section>
+            <p>All your constitution content goes here. You can format it with headings, lists, and paragraphs for readability.</p>
+        </div>
     </main>
 
     <script src="script.js"></script>
