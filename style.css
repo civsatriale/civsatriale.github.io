@@ -1,60 +1,108 @@
-/* General setup */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    display: flex;
     background-color: #121212;
     color: #e0e0e0;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    min-height: 100vh;
-    background-color: #1f1f1f;
-    padding: 2rem 1rem;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+.top-nav {
     position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f1f1f;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 1000;
 }
 
-.sidebar h1 {
-    font-size: 1.8rem;
+.top-nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #4ea1ff;
-    margin-bottom: 2rem;
 }
 
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
+.top-nav input[type="text"] {
+    flex-grow: 1;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
 }
 
-.sidebar nav ul li {
+.top-nav input::placeholder {
+    color: #888;
+}
+
+.nav-icons .icon {
+    width: 24px;
+    height: 24px;
+}
+
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+/* Landing */
+.landing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.landing-text h1 {
+    font-size: 2.5rem;
+    color: #4ea1ff;
+}
+
+.landing-text p {
+    font-size: 1.2rem;
     margin: 1rem 0;
 }
 
-.sidebar nav ul li a {
+.buttons a {
     text-decoration: none;
-    color: #e0e0e0;
+    padding: 0.75rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: 6px;
     font-weight: 600;
-    transition: color 0.2s;
 }
 
-.sidebar nav ul li a:hover {
-    color: #4ea1ff;
+.btn-primary {
+    background-color: #4ea1ff;
+    color: #fff;
 }
 
-/* Main content */
-.content {
-    margin-left: 270px;
-    padding: 2rem;
-    max-width: 900px;
+.btn-secondary {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #4ea1ff;
 }
 
-.content section {
-    margin-bottom: 3rem;
+.landing-image img {
+    max-width: 500px;
+    border-radius: 12px;
 }
 
-.content h2 {
+/* Constitution Articles */
+section#constitution article {
+    margin-bottom: 2rem;
+}
+
+section#constitution h2 {
+    font-size: 2rem;
     color: #4ea1ff;
     margin-bottom: 1rem;
+}
+
+section#constitution h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #4ea1ff;
 }
