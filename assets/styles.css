@@ -1,57 +1,95 @@
-/* ===== Global Reset ===== */
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
-    --bg: #111;
-    --fg: #eee;
-    --accent: #d62b70;
+    --bg: #121212;
+    --clr: #fff;
 }
 
-/* ===== Body ===== */
+/* Body */
 body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: Arial, sans-serif;
-    padding-bottom: 50px;
+    background-color: var(--bg);
+    color: var(--clr);
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* ===== Hero Sections ===== */
-.hero {
-    background: url("flag.jpeg") center/cover;
-    padding: 90px 20px;
-    text-align: center;
-    backdrop-filter: blur(2px);
-}
-
-.sub-hero {
-    background: #222;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.hero h1, .sub-hero h1 {
-    font-size: 3rem;
-    text-shadow: 0 0 15px #000;
-}
-
-/* ===== Neon Navigation Bar ===== */
-.nav-center {
+/* Navbar */
+header.navbar {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.neon-nav {
-    position: relative;
+header.navbar h1.logo {
+    font-size: 1.8em;
+    background: linear-gradient(to right, purple, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s;
+}
+
+header.navbar h1.logo:hover {
+    background: linear-gradient(to right, orange, pink);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: var(--clr);
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #9b59b6;
+    filter: drop-shadow(0 0 20px #9b59b6)
+            drop-shadow(0 0 40px #9b59b6)
+            drop-shadow(0 0 60px #9b59b6);
+}
+
+/* Main content */
+main {
+    margin-top: 100px;
+    padding: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section titles */
+h1.section-title {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, purple, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Neon icon hover effect (optional, you can apply it in nav later if desired) */
+ul.neon-icons {
     display: flex;
     gap: 50px;
+    justify-content: center;
+    margin: 20px 0;
 }
-
-.neon-nav li {
+ul.neon-icons li {
     position: relative;
     list-style: none;
     width: 80px;
@@ -62,89 +100,41 @@ body {
     cursor: pointer;
     transition: 0.5s;
 }
-
-.neon-nav li::before {
+ul.neon-icons li::before {
     content: '';
     position: absolute;
     inset: 30px;
-    box-shadow: 0 0 0 10px #fff,
-                0 0 0 20px #111,
-                0 0 0 22px #fff;
+    box-shadow: 0 0 0 10px var(--clr),
+                0 0 0 20px var(--bg),
+                0 0 0 22px var(--clr);
     transition: 0.5s;
 }
-
-.neon-nav li:hover::before {
+ul.neon-icons li:hover::before {
     inset: 15px;
 }
-
-.neon-nav li::after {
+ul.neon-icons li::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: #111;
+    background: var(--bg);
     transform: rotate(45deg);
     transition: 0.5s;
 }
-
-.neon-nav li:hover::after {
-    inset: 0px;
+ul.neon-icons li:hover::after {
     transform: rotate(0deg);
 }
-
-.neon-nav li a {
+ul.neon-icons li a {
     position: relative;
-    text-decoration: none;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.neon-nav i {
+ul.neon-icons li a i {
     font-size: 2em;
-    color: #fff;
     transition: 0.5s;
+    color: var(--clr);
 }
-
-.neon-nav span {
-    position: absolute;
-    font-size: 0.9em;
-    opacity: 0;
-    transition: 0.5s;
-    transform: scale(0) translateY(200%);
-}
-
-.neon-nav li:hover i {
+ul.neon-icons li:hover a i {
     transform: translateY(-40%);
-    filter: drop-shadow(0 0 10px #fff);
-}
-
-.neon-nav li:hover span {
-    opacity: 1;
-    transform: scale(1) translateY(100%);
-}
-
-/* ===== Content Area ===== */
-.content {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-.content h2 {
-    margin-top: 25px;
-}
-
-p, li {
-    font-size: 1.05rem;
-    line-height: 1.65rem;
-    margin-bottom: 10px;
-}
-
-/* ===== Footer ===== */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    opacity: 0.5;
 }
