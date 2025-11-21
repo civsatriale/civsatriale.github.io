@@ -1,140 +1,22 @@
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-    --bg: #121212;
-    --clr: #fff;
-}
-
-/* Body */
-body {
-    background-color: var(--bg);
-    color: var(--clr);
-    min-height: 100vh;
-    line-height: 1.6;
-}
+/* Reset and basic styles */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#121212; color:#fff; min-height:100vh; display:flex; flex-direction:column;}
+a {text-decoration:none; color:#fff; transition:0.3s;}
+a:hover {color:#9b59b6;}
 
 /* Navbar */
-header.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1e1e1e;
-    padding: 20px 40px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
+.navbar {display:flex; justify-content:space-between; align-items:center; background:#1e1e1e; padding:20px; position:sticky; top:0; z-index:1000;}
+.logo {font-size:1.5em; background:linear-gradient(to right, purple, blue); -webkit-background-clip:text; -webkit-text-fill-color:transparent; transition:0.5s;}
+.logo:hover {background:linear-gradient(to right, orange, pink);}
+.nav-links {list-style:none; display:flex; gap:20px;}
+.nav-links li a {position:relative;}
+.nav-links li a:hover {filter:drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);}
 
-header.navbar h1.logo {
-    font-size: 1.8em;
-    background: linear-gradient(to right, purple, blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: background 0.5s;
-}
+/* Sections */
+main {flex:1; padding:40px;}
+.section {max-width:900px; margin-bottom:40px;}
+.section-title {font-size:2em; margin-bottom:15px; background:linear-gradient(to right, purple, blue); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+p, ul {margin-bottom:15px; line-height:1.6; font-size:1.05em;}
 
-header.navbar h1.logo:hover {
-    background: linear-gradient(to right, orange, pink);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    font-size: 1.1em;
-    color: var(--clr);
-    transition: 0.3s;
-}
-
-.nav-links li a:hover {
-    color: #9b59b6;
-    filter: drop-shadow(0 0 20px #9b59b6)
-            drop-shadow(0 0 40px #9b59b6)
-            drop-shadow(0 0 60px #9b59b6);
-}
-
-/* Main content */
-main {
-    margin-top: 100px;
-    padding: 40px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Section titles */
-h1.section-title {
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    background: linear-gradient(to right, purple, blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Neon icon hover effect (optional, you can apply it in nav later if desired) */
-ul.neon-icons {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    margin: 20px 0;
-}
-ul.neon-icons li {
-    position: relative;
-    list-style: none;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.5s;
-}
-ul.neon-icons li::before {
-    content: '';
-    position: absolute;
-    inset: 30px;
-    box-shadow: 0 0 0 10px var(--clr),
-                0 0 0 20px var(--bg),
-                0 0 0 22px var(--clr);
-    transition: 0.5s;
-}
-ul.neon-icons li:hover::before {
-    inset: 15px;
-}
-ul.neon-icons li::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--bg);
-    transform: rotate(45deg);
-    transition: 0.5s;
-}
-ul.neon-icons li:hover::after {
-    transform: rotate(0deg);
-}
-ul.neon-icons li a {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-ul.neon-icons li a i {
-    font-size: 2em;
-    transition: 0.5s;
-    color: var(--clr);
-}
-ul.neon-icons li:hover a i {
-    transform: translateY(-40%);
-}
+/* Footer */
+footer {background:#1e1e1e; padding:20px; text-align:center; font-size:0.9em; color:#aaa;}
